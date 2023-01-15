@@ -6,7 +6,13 @@ function Character(name) {
     this.hunger = 0;
     this.fitness = 10;
       };
-     
+  
+ Character.prototype =  {
+        get isAlive() {
+          return this.age < 30 && this.hunger < 10 && this.fitness > 0;
+        },
+       
+      };   
   Character.prototype.growUp = function () {
     this.age += 1;
     this.hunger += 5;
@@ -21,7 +27,9 @@ function Character(name) {
 
   
   Character.prototype.feed = function () {
-
+    if (!this.isAlive) {
+      throw new Error("Your character is no longer alive");
+    }
     this.hunger -= 3; 
     this.hunger = Math.max(0, this.hunger - 3)
   };
@@ -42,23 +50,7 @@ function Character(name) {
 
   };
 
-  Character.prototype.isAlive = function () {
-    if (!this.isAlive) {
-      throw new Error("Your character is no longer alive");
-    }
-    if (this.fitness <= 0){
-      return false;
-    }
-    if (this.hunger >= 10){
-      return false;
-    }
-    if (this.age >= 30){
-      return false;
-    }
-    else {
-      return true
-    }
-  };
+
 
 
 
