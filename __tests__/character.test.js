@@ -3,6 +3,7 @@ const Character = require("../character");
 describe("constructor", () => {
   it("returns an object", () => {
     expect(new Character("Mametchi")).toBeInstanceOf(Object);
+    //instanceof operator tests if the prototype property of a constructor appears anywhere in the prototype chain of an object
   });
 });
 
@@ -79,6 +80,8 @@ describe("constructor", () => {
   });
 });
 
+
+
 describe("constructor", () => {
   // ...
   it(" I feel great should be printed in console", () => {
@@ -86,9 +89,14 @@ describe("constructor", () => {
 
     character.checkUp();
 
-    expect(character.checkUp).toBeTruthy
+    expect(character.checkUp()).toMatch("I feel great")
   });
 });
+
+
+
+
+
 
 describe("constructor", () => {
   // ...

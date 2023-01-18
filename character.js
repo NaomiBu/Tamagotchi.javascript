@@ -1,5 +1,6 @@
 
 
+const MAXIMUM_FITNESS = 10
 function Character(name) {
     this.name = name;
     this.age = 0;
@@ -43,22 +44,13 @@ function Character(name) {
     }
     if (this.hunger >= 5 && this.fitness <= 3){
       return ("I am hungry AND I need a walk ");
-    }
-    else {
+    } else {
         return("I feel great");
     }
 
   };
 
-
-
-
-
   const mametchi = new Character("Mametchi");
-  const gozarutchi = new Character("Gozarutchi");
 
-  gozarutchi.growUp = function () {
-    this.age += 5;
-  }; 
    
 module.exports = Character; // export it from the file
